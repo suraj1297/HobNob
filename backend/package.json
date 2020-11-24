@@ -1,0 +1,31 @@
+{
+  "name": "hobnob-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suraj1297/HobNob"
+  },
+  "author": "suraj desai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suraj1297/HobNob/issues"
+  },
+  "homepage": "https://github.com/suraj1297/HobNob#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.0.0",
+    "express-validator": "^6.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.15",
+    "uuid": "^8.3.1"
+  }
+}
