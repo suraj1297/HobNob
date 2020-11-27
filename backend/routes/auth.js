@@ -17,17 +17,30 @@ router.post(
         .withMessage("First name must be at least 3 chars long"),
     body("password")
         .isLength({ min: 10 })
-        .withMessage("Password must be at least 10 chars long")
+        .withMessage(
+            "Password must contain 10 chacracters which includes combination Uppercase, Lowercase, Numbers and " +
+            "atleast one special Character '@#$*&'"
+        )
         .matches(/[@$#*&]/)
         .withMessage(
-            "Password must contain atleast one special character as '@#$*&'"
+            "Password must contain 10 chacracters which includes combination Uppercase, Lowercase, Numbers and " +
+            "atleast one special Character '@#$*&'"
         )
         .matches(/[0-9]/)
-        .withMessage("Password must contain numbers")
+        .withMessage(
+            "Password must contain 10 chacracters which includes combination Uppercase, Lowercase, Numbers and " +
+            "atleast one special Character '@#$*&'"
+        )
         .matches(/[a-z]/)
-        .withMessage("Password must contain characters")
+        .withMessage(
+            "Password must contain 10 chacracters which includes combination Uppercase, Lowercase, Numbers and " +
+            "atleast one special Character '@#$*&'"
+        )
         .matches(/[A-Z]/)
-        .withMessage("Password must contain at least one uppercase character"),
+        .withMessage(
+            "Password must contain 10 chacracters which includes combination Uppercase, Lowercase, Numbers and " +
+            "atleast one special Character '@#$*&'"
+        ),
     body("username")
         .isLength({ min: 3, max: 10 })
         .withMessage(

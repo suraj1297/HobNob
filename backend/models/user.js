@@ -36,6 +36,28 @@ const userSchema = new mongoose.Schema({
     salt: {
         type: String,
         required: true
+    },
+    display_picture: {
+        data: {
+            type: Buffer,
+            default: null
+        },
+        contentType: {
+            type: String,
+            default: ""
+        }
+    },
+    friends: {
+        type: Array,
+        default: []
+    },
+    dp: {
+        type: Boolean,
+        required: true
+    },
+    friend_requests: {
+        type: Array,
+        default: []
     }
 })
 

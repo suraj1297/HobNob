@@ -1,0 +1,23 @@
+#delete-button {
+    border: 1px solid #F76C6C;
+    background-color: #F76C6C;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+#username span {
+    font-size: 0.8em;
+}
+
+#username {
+    font-size: 0.9em;
+    margin-top: 7px;
+    width: 150px;
+}
+
+#accept-button {
+    background-color: #5aa469;
+    border-color: #5aa469;
+}

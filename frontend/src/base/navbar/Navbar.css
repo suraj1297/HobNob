@@ -1,14 +1,32 @@
-.navbar{
-    background-color: #51adcf;
+.navbar {
+    /* background-color: #51adcf; */
+    background-color: #F76C6C;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 100px;
+    padding: 20px 100px;
+    position: sticky;
+    top: 0;
 
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
+}
+
+.searchbar {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin-left: -300px;
+    width: 20%;
+}
+
+.navbar i {
+    position: relative;
+    right: 420px;
+    color: #F76C6C;
 }

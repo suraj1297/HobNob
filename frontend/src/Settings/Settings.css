@@ -1,0 +1,86 @@
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 450px;
+    margin-top: 60px;
+}
+
+.settings-container h3 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.display-picture-container {
+    margin-top: 20px;
+    display: flex;
+}
+
+.display-picture-container p {
+    margin-right: 80px;
+}
+
+.change-field {
+    background-color: #F76C6C;
+    color: white;
+    cursor: pointer;
+    padding: 2px 15px 7px 15px;
+    border-radius: 20px;
+}
+
+.change-field:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.message {
+    position: absolute;
+    top: 62px;
+    right: 0;
+    padding: 10px 0;
+    background-color: #bedbbb;
+    width: 100%;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    font-size: 1.2em;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.error {
+    position: absolute;
+    top: 62px;
+    right: 0;
+    padding: 10px 0;
+    background-color: #f05454;
+    width: 100%;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.input-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 50%;
+    align-items: center;
+}
+
+.input-container input {
+    outline: none;
+    padding: 10px 20px;
+    width: 90%;
+}
+
+.update-button {
+    background-color: #F76C6C;
+    padding: 2px 15px 7px 15px;
+    color: white;
+    cursor: pointer;
+    width: max-content;
+    margin-left: 74px;
+    border-radius: 20px;
+}

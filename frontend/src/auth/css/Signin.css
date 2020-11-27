@@ -1,4 +1,4 @@
-.signin{
+.signin {
     background-image: url(../images/boat.jpg);
     background-repeat: no-repeat;
     width: 100%;
@@ -7,18 +7,19 @@
 }
 
 
-.signin-form{
+.signin-form {
     display: flex;
     flex-direction: column;
 }
 
-.signin-form input{
- padding: 10px;
- width: 300px;
- margin: 10px 0;
+.signin-form input {
+    padding: 10px;
+    width: 300px;
+    margin: 10px 0;
+    outline: none;
 }
 
-.login-button{
+.login-button {
     border: 1px solid black;
     margin-top: 15px;
     cursor: pointer;
@@ -28,6 +29,14 @@
 
 #signin-container {
     width: max-content;
-    padding: 100px 100px 0 100px ;
+    padding: 100px 100px 0 100px;
     height: 78vh;
+}
+
+#signin-container p {
+    margin-top: 20px;
+}
+
+#signin-container a {
+    color: #ff004d;
 }
