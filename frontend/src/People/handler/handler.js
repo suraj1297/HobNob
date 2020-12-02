@@ -12,7 +12,7 @@ export const getSearchedPeople = (name) => {
                 }
             })
     else
-        return JSON.stringify({ error: "Unauthorized access denied" })
+        return { error: "Unauthorized access denied" }
 }
 
 export const sendFriendRequest = (to) => {
@@ -26,7 +26,7 @@ export const sendFriendRequest = (to) => {
                 }
             })
     else
-        return JSON.stringify({ error: "Unauthorized access denied" })
+        return { error: "Unauthorized access denied" }
 }
 
 export const deleteFriendRequest = (data) => {
@@ -46,5 +46,5 @@ export const deleteFriendRequest = (data) => {
                 }
             })
     else
-        return JSON.stringify({ error: "Unauthorized access denied" })
+        return { error: "Unauthorized access denied" }
 }

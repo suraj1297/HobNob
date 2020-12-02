@@ -1,0 +1,12 @@
+.story-page-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 450px;
+    margin-top: 60px;
+    width: 60%;
+}
+
+#loading {
+    margin-left: 500px;
+    margin-top: 150px;
+}

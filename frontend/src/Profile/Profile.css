@@ -1,0 +1,91 @@
+.header-container {
+    margin-left: 480px;
+    margin-top: 60px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: flex-start;
+    padding: 20px 0;
+    font-weight: 500;
+}
+
+.header-container div:nth-last-child(2) {
+    margin: 0 200px;
+}
+
+.header-container div:nth-last-child(3) {
+    text-align: center;
+    margin-left: 40px;
+}
+
+.header-container div:nth-last-child(2),
+.header-container div:nth-last-child(1) {
+    text-align: center;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header-container div:nth-last-child(2) p,
+.header-container div:nth-last-child(1) p {
+    font-size: 1.5em;
+}
+
+.header-container img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    align-self: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#loading-profile {
+    margin-left: 570px;
+    margin-top: 80px;
+}
+
+.user-name {
+    background-color: #F76C6C;
+    color: white;
+    padding: 20px 35px;
+    border-radius: 50%;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.postwall-container {
+    margin-left: 350px;
+    margin-top: 30px;
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.postwall-container img {
+    width: 350px;
+    height: 350px;
+}
+
+#trash-can {
+    position: absolute;
+    color: #F76C6C;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.img-container {
+    position: relative;
+
+}
+
+.empty-message {
+    width: 300%;
+    margin-left: 200px;
+    font-size: 1.1em;
+    margin-top: 30px;
+}

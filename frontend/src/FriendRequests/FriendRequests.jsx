@@ -2,9 +2,10 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import './FriendRequests.css';
 import UserCard from './../Home/UserCard';
-import { getFriendRequests, getUser, acceptFriendRequest } from './../Friends/handler/handler';
+import { getFriendRequests, getUser, acceptFriendRequest } from './handler/handler';
 import { deleteFriendRequest } from '../People/handler/handler';
 import { isLoggedIn } from '../auth/handler/Authentication';
+import loadingGif from "../Home/asset/loading.gif"
 
 export default function FriendRequests() {
 
@@ -28,6 +29,7 @@ export default function FriendRequests() {
                     }, 2000)
                 }
                 else {
+                    setError("")
                     setFriendRequests(data.requests)
                 }
             })
@@ -55,6 +57,7 @@ export default function FriendRequests() {
                 else {
                     setError("")
                     setSuccess("Friend request was deleted")
+                    requests()
                     const timeoutId = setTimeout(() => {
                         console.log("timeout")
                         setSuccess("")
@@ -126,10 +129,15 @@ function RequestTile(props) {
                 setLoading(false)
             })
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [])
+
+    const displayProfile = (e) => {
+        console.log(e.target)
+        window.open(`/profile/${e.target.attributes.data.value}`)
+    }
 
 
-    if (loading) return (<div>Loading.....</div>)
+    if (loading) return (<img src={loadingGif} alt="" className="loadingGif" style={{ width: "50%", marginRight: "150px" }} />)
 
 
     return (
@@ -137,12 +145,12 @@ function RequestTile(props) {
         <div className="people-tile">
             {url && <div className="profile-picture" style={{ backgroundImage: url }}></div>}
             {!url && <p className="profile-picture-name">{user.firstname[0].toUpperCase()} </p>}
-            <div>
-                <p>
-                    <span>{user.firstname[0].toUpperCase() + user.firstname.slice(1, user.firstname.length).toLowerCase()} </span>
-                    <span>{user.lastname[0].toUpperCase() + user.lastname.slice(1, user.lastname.length).toLowerCase()}</span>
+            <div data={user._id} onClick={displayProfile} style={{ cursor: "pointer" }}>
+                <p data={user._id}>
+                    <span data={user._id}>{user.firstname[0].toUpperCase() + user.firstname.slice(1, user.firstname.length).toLowerCase()} </span>
+                    <span data={user._id}>{user.lastname[0].toUpperCase() + user.lastname.slice(1, user.lastname.length).toLowerCase()}</span>
                 </p>
-                <p id="username"><span>username: </span>{user.username}</p>
+                <p id="username" data={user._id}><span data={user._id}>username: </span>{user.username}</p>
             </div>
             <div data={`${user._id}`} id="delete-button" onClick={props.deleteRequest}>delete</div>
             <div data={`${user._id}`} id="accept-button" onClick={props.acceptRequest}>accept</div>

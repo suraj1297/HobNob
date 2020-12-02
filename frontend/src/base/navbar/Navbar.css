@@ -5,9 +5,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 100px;
+    padding: 10px 100px;
     position: sticky;
     top: 0;
+    z-index: 5;
 
 }
 
@@ -29,4 +30,10 @@ a {
     position: relative;
     right: 420px;
     color: #F76C6C;
+}
+
+.signout {
+    border: 1px solid white;
+    cursor: pointer;
+    padding: 5px 10px 10px 10px
 }

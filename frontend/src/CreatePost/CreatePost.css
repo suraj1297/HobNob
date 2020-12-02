@@ -1,0 +1,57 @@
+.post-form-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 450px;
+    margin-top: 60px;
+    width: 60%;
+}
+
+.post-form-container h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#post-form div {
+    margin-bottom: 30px;
+}
+
+#post-form div p {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 30px;
+}
+
+.post-button {
+    background-color: #F76C6C;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 40px;
+}
+
+.top-container {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-container select {
+    padding: 10px;
+    outline: none;
+}

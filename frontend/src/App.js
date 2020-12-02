@@ -9,6 +9,9 @@ import Settings from './Settings/Settings';
 import People from './People/People';
 import Friends from './Friends/Friends';
 import FriendRequests from "./FriendRequests/FriendRequests"
+import CreatePost from './CreatePost/CreatePost';
+import Home from './Home/Home';
+import Profile from './Profile/Profile';
 
 export default class App extends Component {
 
@@ -37,10 +40,13 @@ export default class App extends Component {
 					<Route path="/signup">
 						<Signup />
 					</Route>
-					<PrivateRoute path="/settings" component={() => <Settings />} />
+					<PrivateRoute path="/settings" component={Settings} />
 					<PrivateRoute path="/people/:name" component={() => <People />} />
 					<PrivateRoute path="/friends" component={() => <Friends />} />
 					<PrivateRoute path="/friend_requests" component={() => <FriendRequests />} />
+					<PrivateRoute path="/post-story" component={() => <CreatePost />} />
+					<PrivateRoute path="/home" component={Home} />
+					<PrivateRoute path="/profile/:id" component={Profile} />
 				</Switch>
 			</Router>
 		)

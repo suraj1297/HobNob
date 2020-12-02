@@ -14,7 +14,7 @@ export const uploadImage = (data) => {
                 }
             })
     else
-        return JSON.stringify({ error: "Unauthorized access denied" })
+        return { error: "Unauthorized access denied" }
 }
 
 export const updateData = (data) => {
@@ -30,6 +30,6 @@ export const updateData = (data) => {
             }
         }).then(response => response.json())
     else
-        return JSON.stringify({ error: "Unauthorized access denied" })
+        return { error: "Unauthorized access denied" }
 
 }

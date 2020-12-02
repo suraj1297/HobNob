@@ -1,0 +1,75 @@
+.post-image {
+    width: 600px;
+    height: 400px;
+    align-self: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.post-container {
+    border: 1px solid black;
+    width: 600px;
+    height: max-content;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.caption-container {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+}
+
+.caption-container>div>p {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.caption-container i {
+    justify-self: center;
+    font-size: 2em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.posted-date {
+    font-size: 0.8em;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.dp-username-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dp {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.dp-name {
+    background-color: #bedbbb;
+    padding: 5px 15px 10px 15px;
+    border-radius: 50%;
+    margin-right: 20px;
+
+}
+
+.likes {
+    font-size: 0.7em;
+    position: relative;
+    top: 20px;
+    right: 20px;
+}
