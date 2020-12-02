@@ -2,7 +2,6 @@ const User = require("../models/user")
 const ObjectId = require("mongoose").Types.ObjectId
 const formidable = require('formidable')
 const fs = require("fs")
-const { response } = require("express")
 
 // will use the user id infused by expree-jwt and will fetch the user from db
 exports.getUserById = (req, res, next) => {
@@ -67,7 +66,7 @@ exports.updateDisplayPicture = (req, res) => {
 
     form.parse(req, (err, fields, files) => {
         if (err) {
-            return res.status(400).json({
+            return res.json({
                 error: "Problem with image"
             });
         }
@@ -137,18 +136,40 @@ exports.searchPeople = (req, res) => {
 exports.updateFriendRequest = (req, res) => {
     const id = req.params.idto
 
-    User.updateOne({ _id: id }, { $push: { friend_requests: req.profile._id } }, { new: true })
-        .exec((err, user) => {
-            if (err || !user) return res.json({ error: 'Request was unsuccessfull' })
+    // User.updateOne({ _id: id }, { $push: { friend_requests: req.profile._id } }, { new: true })
+    //     .exec((err, user) => {
+    //         if (err || !user) return res.json({ error: 'Request was unsuccessfull' })
 
-            user.friends = undefined
-            user.display_picture = undefined
-            user.salt = undefined
-            user.password = undefined
-            user.friend_requests = undefined
+    //         user.friends = undefined
+    //         user.display_picture = undefined
+    //         user.salt = undefined
+    //         user.password = undefined
+    //         user.friend_requests = undefined
 
-            res.send(user)
-        })
+    //         res.send(user)
+    //     })
+
+
+    User.findOne({ _id: id }, (err, user) => {
+        if (err || !user) return res.json({ error: 'Request was unsuccessfull' })
+
+        if (!user.friend_requests.includes(req.profile._id)) {
+            user.friend_requests.push(req.profile._id)
+
+            user.save((err, user) => {
+                if (err || !user) return res.json({ error: 'Request was unsuccessfull' })
+                user.friends = undefined
+                user.display_picture = undefined
+                user.salt = undefined
+                user.password = undefined
+                user.friend_requests = undefined
+
+                return res.send(user)
+            })
+        }
+        else return res.json({ message: "Updated successfully" })
+
+    })
 }
 
 exports.deletefriendRequest = async (req, res) => {
@@ -213,4 +234,34 @@ exports.acceptRequest = async (req, res) => {
         })
 
     })
+}
+
+// unfollow friend
+exports.unfollow = (req, res) => {
+
+    const id1 = req.params.id1
+    const id2 = req.params.id2
+
+    User.findOne({ _id: id1 }, (err, user) => {
+        if (err || !user) return res.json({ error: "Unfollow request was unsuccessfull" })
+
+        user.friends.splice(user.friends.indexOf(id2), 1)
+
+        user.save((err, response) => {
+            if (err) return res.json({ error: "Unfollow request was unsuccessfull" })
+
+            User.findOne({ _id: id2 }, (err, user) => {
+                if (err || !user) return res.json({ error: "Unfollow request was unsuccessfull" })
+
+                user.friends.splice(user.friends.indexOf(id1), 1)
+                user.save((err, response) => {
+                    if (err) return res.json({ error: "Unfollow request was unsuccessfull" })
+                    return res.json({ message: "Unfollowed" })
+                })
+
+            })
+        })
+
+    })
+
 }

@@ -11,7 +11,8 @@ const {
     deletefriendRequest,
     getUserFriends,
     getUserFriendRequests,
-    acceptRequest
+    acceptRequest,
+    unfollow
 } = require("../controllers/user")
 
 const User = require("../models/user")
@@ -30,12 +31,12 @@ router
 router.get("/people?", isAuthenticate, searchPeople)
 
 
-// updaates and deletes friend requests
+// updates and deletes friend requests
 router.route("/user/friendrequest/:id/:idto")
     .put(getUserById, updateFriendRequest)
     .delete(getUserById, deletefriendRequest)
 
-// returns friend requests
+// returns friend_requests
 router.get('/user/friendrequests/:id', isAuthenticate, getUserById, getUserFriendRequests)
 
 // returns friends array
@@ -44,6 +45,9 @@ router.get("/user/friends/:id", isAuthenticate, getUserById, getUserFriends)
 // accepts friends requests
 // id1 must be of the user to whom request is sent and second id must be of user who sent request
 router.put("/user/acceptrequest/:id1/:id2", isAuthenticate, acceptRequest)
+
+// unfollow friend
+router.put("/user/unfollow/:id1/:id2", isAuthenticate, unfollow)
 
 
 
