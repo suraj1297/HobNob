@@ -26,3 +26,15 @@ Using the settings page user can modify his profile or change his Profile pictur
 ![Images](/screenshots/createpost.png)
 
 Using create post tab user can create new post and can share over the internet
+
+# Friends
+
+![Images](/screenshots/friends.png)
+
+In friends section the user can see the list of his friends whom he follows
+
+# Friend Requests
+
+![Images](/screenshots/requests.png)
+
+In friends requests section the user can see the list of his friend requests.
