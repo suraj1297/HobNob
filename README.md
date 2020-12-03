@@ -23,6 +23,6 @@ Using the settings page user can modify his profile or change his Profile pictur
 
 # Create Post
 
-[screenshots](/createpost.png)
+![screenshots](/createpost.png)
 
 Using create post tab user can create new post and can share over the internet
