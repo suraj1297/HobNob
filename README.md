@@ -35,6 +35,6 @@ In friends section the user can see the list of his friends whom he follows
 
 # Friend Requests
 
-![Images](/screenshots/requests.png)
+![Images](/screenshots/request.png)
 
 In friends requests section the user can see the list of his friend requests.
